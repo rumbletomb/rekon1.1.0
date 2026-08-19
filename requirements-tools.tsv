@@ -1,0 +1,38 @@
+phase	tool	role	priority	install_path
+base	curl	HTTP y fuentes pasivas	core	package-manager
+base	jq	procesado JSON	core	package-manager
+base	dig	DNS directo e inverso	core	dnsutils/bind-utils
+base	whois	WHOIS y RIR	core	package-manager
+network	nmap	validacion TCP, UDP, servicios, SO y NSE safe	core	package-manager
+network	naabu	descubrimiento TCP rapido	preferred	PDTM
+network	masscan	respaldo TCP rapido para IP con privilegios	optional	package-manager
+passive	subfinder	enumeracion pasiva de subdominios	preferred	PDTM
+passive	assetfinder	enumeracion pasiva complementaria	optional	package-manager/Go
+passive	amass	enumeracion pasiva complementaria	optional	package-manager
+dns	dnsx	resolucion, registros y fuerza DNS	preferred	PDTM
+dns	puredns	resolucion masiva y filtrado wildcard	preferred	Go
+dns	massdns	motor requerido por Puredns	preferred	package-manager
+dns	dnsrecon	consultas DNS estandar complementarias	optional	package-manager
+dns	gobuster	respaldo de fuerza DNS	fallback	package-manager/Go
+http	httpx	deteccion HTTP y tecnologias	preferred	PDTM
+http	whatweb	fingerprint web complementario	optional	package-manager
+http	wafw00f	deteccion de WAF	optional	package-manager
+crawl	katana	crawler HTTP y JavaScript principal	preferred	PDTM
+crawl	hakrawler	crawler complementario en perfil deep	optional	Go
+crawl	gau	URLs historicas	optional	Go
+crawl	waybackurls	URLs historicas complementarias	optional	Go
+fuzz	ffuf	directorios, ficheros, parametros GET y vhosts	preferred	package-manager/Go
+fuzz	feroxbuster	recursion web acotada en perfil deep	preferred	package-manager
+fuzz	gobuster	contraste de vhosts y fallback web	optional	package-manager/Go
+fuzz	arjun	descubrimiento eficiente de parametros GET	preferred	pipx
+tls	testssl.sh	analisis TLS principal	preferred	package-manager
+tls	sslscan	analisis TLS alternativo	fallback	package-manager
+tls	openssl	handshake y certificado TLS	fallback	package-manager
+observations	nuclei	plantillas tech/exposure/misconfig no intrusivas	preferred	PDTM
+screenshots	gowitness	capturas de servicios web	optional	Go
+services	smbclient	listado SMB anonimo	optional	package-manager
+services	ldapsearch	RootDSE LDAP anonimo	optional	ldap-utils/openldap-clients
+services	rpcinfo	inventario RPC	optional	rpcbind
+services	showmount	exports NFS	optional	nfs-common
+report	pandoc	informe HTML opcional	optional	package-manager
+wordlists	SecLists	diccionarios DNS, web y parametros	preferred	package-manager

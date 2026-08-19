@@ -1,0 +1,4 @@
+# Reserved documentation addresses; dry-run fixture only.
+192.0.2.53
+198.51.100.53
+203.0.113.53
